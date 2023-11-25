@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FBDataFinder</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='styles/country.css') }}"
+    />
+    <script
+      src="https://kit.fontawesome.com/8c9e72e8f8.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav id="nav">
+      <div class="logo">FBDataFinder</div>
+      <div class="home">
+        <a href='/'> <i class="fa-solid fa-2xl fa-house"></i></a>
+      </div>
+    </nav>
+
+    <div class="div_form">
+      <form action="result" method="POST">
+        <div class="style-input">
+          <div class="input-1">
+            <label for="name">Name :</label>
+            <input type="text" list="dl_id" name="name" class="input" />
+          </div>
+          <div class="input-2">
+            <label for="country">Country :</label>
+            <input type="text" name="country" default:"" class="input" />
+          </div>
+          <div class="input-3">
+            <label for="position">Position :</label>
+            <input type="text" list="pos" name="position" class="input" />
+          </div>
+        </div>
+
+        <datalist id="dl_id">
+          <option value="L. Messi"></option>
+          <option value="C. Ronaldo"></option>
+          <option value="C. Eriksen"></option>
+        </datalist>
+
+        <datalist id="pos">
+          <option value="CF"></option>
+          <option value="RW"></option>
+          <option value="ST"></option>
+          <option value="CM"></option>
+          <option value="CAM"></option>
+          <option value="RM"></option>
+          <option value="LM"></option>
+          <option value="CDM"></option>
+          <option value="LW"></option>
+          <option value="GK"></option>
+          <option value="CB"></option>
+          <option value="LB"></option>
+          <option value="RB"></option>
+          <option value="LWB"></option>
+          <option value="RWB"></option>
+        </datalist>
+
+        <input type="submit" class="submit" />
+      </form>
+    </div>
+    <div class="div_table">
+      {% for table in tables %} {{ table|safe}} {% endfor%}
+    </div>
+
+    <footer id="footer">
+      <div class="footer-1">
+        <ul id="footer-ul">
+          <li>
+            <a href="https://www.instagram.com/chr7s.dsouza/" target="_blank"
+              ><i class="fa-brands fa-2xl fa-square-instagram"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://github.com/chr7s-xyz" target="_blank"
+              ><i class="fa-brands fa-2xl fa-square-github"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/chris-dsouza-55719b245/"
+              target="_blank"
+              ><i class="fa-brands fa-2xl fa-linkedin"></i
+            ></a>
+          </li>
+        </ul>
+        <div id="footer-11">
+          <p class="footer-para"  id="fpara">Made using Dataset Provided by Kaggle</p>
+          <p class="footer-para">@Chris Dsouza</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
